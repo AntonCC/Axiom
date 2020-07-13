@@ -10,6 +10,9 @@
       font-size: 2.5rem;
       font-weight: 700;
       color: #222;
+      background: linear-gradient(to right, #22c1c3, #fdbb2d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     ul {
       display: flex;

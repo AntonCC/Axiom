@@ -3,7 +3,7 @@
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
-    grid-gap: 2rem;
+    grid-column-gap: 2rem;
     align-items: center;
     justify-content: center;
     .side-a {
@@ -15,24 +15,15 @@
         strong {
           color: #386186;
         }
-        @media only screen and (max-width: 1080px) {
-          font-size: 2.5rem;
-        }
       }
       p {
         font-size: 1.1rem;
         line-height: 1.6;
         margin-bottom: 1rem;
         color: #444;
-        @media only screen and (max-width: 1080px) {
-          font-size: .9rem;
-        }
       }
       .landing-cta {
         .landing-btn {
-          @media only screen and (max-width: 815px) {
-
-          }
         }
         div:first-child {
           margin-right: 2rem;
@@ -40,14 +31,53 @@
       }
     }
     .side-b {
+      // grid-row: 1;
+      display: flex;
+      justify-content: center;
       img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+        width: 80%;
+        height: 80%;
+        min-height: 400px;
+        min-width: 400px;
+        filter: drop-shadow(1px 0px 2px black);
+      }
+    }
+  }
+}
+
+// Media Queries
+.landing {
+  .container {
+    .side-a {
+      h2 {
+        @media only screen and (max-width: 1080px) {
+          font-size: 2.5rem;
+        }
+      }
+      p {
+        @media only screen and (max-width: 1080px) {
+          font-size: .9rem;
+        }
+      }
+      .landing-cta {
+
+      }
+      @media only screen and (max-width: 865px) {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+    .side-b {
+      img {
         @media only screen and (max-width: 865px) {
           height: 50%;
           width: 50%;
+          min-height: 300px;
+          min-width: 300px;
         }
+      }
+      @media only screen and (max-width: 865px) {
+        grid-row: 1;
       }
     }
     @media only screen and (max-width: 865px) {
