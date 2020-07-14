@@ -12,7 +12,7 @@ const Landing = () => {
     <div className="landing">
       <div className="container">
         <div className="side-a">
-          <h2>Headphones for <strong>all</strong> your music</h2>
+          <h2>Headphones for <strong className="underline">all</strong> your music</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel tempore aliquid deleniti repellendus qui commodi?</p>
           <div className="landing-cta">
             <RoundedButton className="landing-btn" btnPath="/" btnText="Learn More" /> 
@@ -22,9 +22,6 @@ const Landing = () => {
         <div className="side-b">
           <img src={Headphone} alt="headphones"/>
         </div>
-        {/* <img className="big-circle" src={BigCircle} alt="background circle" />
-        <img className="medium-circle" src={MediumCircle} alt="background circle" />
-        <img className="small-circle" src={SmallCircle} alt="background circle" /> */}
       </div>
     </div>
   )

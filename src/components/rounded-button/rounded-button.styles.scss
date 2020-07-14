@@ -12,5 +12,11 @@
       color: #444;
       border: 1px solid #444;
     }
+    &.white {
+      background: none;
+      color: #fff;
+      border: 1px solid #fff;
+      // font-size: 1.125rem;
+    }
   }
 }

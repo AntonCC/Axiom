@@ -3,10 +3,17 @@ import './rounded-button.styles.scss'
 import { NavLink } from 'react-router-dom'
 
 const RoundedButton = (props) => {
-  const { btnPath, btnText, inverse } = props
+  const { btnPath, btnText, inverse, white } = props
+  let btnClass = "cta";
+
+  if(inverse) {
+    btnClass = "cta inverse"
+  } else if(white) {
+    btnClass = "cta white"
+  }
   return (
     <div className="rounded-btn">
-      <NavLink className={ inverse ? "cta inverse" : "cta" } exact to={btnPath}>{btnText}</NavLink>
+      <NavLink className={ btnClass } exact to={btnPath}>{btnText}</NavLink>
     </div>
   )
 }

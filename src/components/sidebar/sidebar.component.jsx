@@ -1,6 +1,7 @@
 import React from 'react'
 import './sidebar.styles.scss'
 import { NavLink } from 'react-router-dom'
+import RoundedButton from '../rounded-button/rounded-button.component'
 
 const Sidebar = ({ open }) => {
   return (
@@ -10,6 +11,7 @@ const Sidebar = ({ open }) => {
         <li><NavLink exact to="/">About Us</NavLink></li>
         <li><NavLink exact to="/">Contact</NavLink></li>
       </ul>
+      <RoundedButton btnPath="/" btnText="Buy Now" white />
     </nav>
   )
 }
