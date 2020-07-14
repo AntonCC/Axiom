@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './navbar.styles.scss'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ handleSidebar }) => {
   return (
     <div className="navbar">
       <div className="container">
@@ -13,6 +13,12 @@ const Navbar = () => {
           <li><NavLink exact to="/">Contact</NavLink></li>
         </ul>
         <NavLink className="header-cta" exact to="/">Buy Now</NavLink>
+
+        <div className="hamburger" onClick={handleSidebar}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
       </div>
     </div>
   )
