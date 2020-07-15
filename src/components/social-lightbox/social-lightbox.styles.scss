@@ -1,0 +1,50 @@
+.lightbox {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    display: inline-block;
+    position: relative;
+    align-self: center;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 10px;
+      background: #55efc4;
+      position: absolute;
+      bottom: 5%;
+      right: 0px;
+      z-index: -1;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+// Media Queries
+.lightbox {
+  h2 {
+
+  }
+  .container {
+    @media only screen and (max-width: 860px) {
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+    @media only screen and (max-width: 565px) {
+      grid-template-columns: repeat(2, minmax(100px, 1fr));
+      grid-auto-rows: 200px;
+    }
+  }
+}
