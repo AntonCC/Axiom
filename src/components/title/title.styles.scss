@@ -1,0 +1,21 @@
+.title {
+  padding: 2rem 0;
+  text-align: center;
+  h2 {
+    display: inline-block;
+    position: relative;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #111;
+    &::after {
+      content: '';
+      width: 105%;
+      height: 15px;
+      background: #55efc4;
+      position: absolute;
+      bottom: 10%;
+      right: -4px;
+      z-index: -1;
+    }
+  }
+}

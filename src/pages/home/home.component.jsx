@@ -4,6 +4,7 @@ import Landing from '../../components/landing/landing.component'
 import Hero from '../../components/hero/hero.component'
 import Banner from '../../components/banner/banner.component'
 import SocialLightbox from '../../components/social-lightbox/social-lightbox.component'
+import Footer from '../../components/footer/footer.component'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <Banner />
       <SocialLightbox />
+      <Footer />
     </div>
   )
 }

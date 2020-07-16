@@ -5,9 +5,11 @@ import Navbar from './components/navbar/navbar.component'
 import Sidebar from './components/sidebar/sidebar.component'
 import Backdrop from './components/backdrop/backdrop.component'
 import Home from './pages/home/home.component'
+import About from './pages/about/about.component'
 
 const routes = [
-  {path: '/', name: "Home", component: Home}
+  {path: '/', name: "Home", component: Home},
+  {path: '/about', name: "About Us", component: About}
 ]
 
 const App = () => {
@@ -17,7 +19,6 @@ const App = () => {
     setSidebar(!sidebar)
   }
 
-  let openSidebar;
   let openBackdrop;
   if(sidebar) {
     openBackdrop = <Backdrop handleSidebar={handleSidebar}/>

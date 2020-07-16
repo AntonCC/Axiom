@@ -1,0 +1,18 @@
+.about-cards {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 600px));
+    justify-content: space-between;
+    grid-column-gap: 2rem;
+  }
+}
+
+// Media Queries
+.about-cards {
+  .container {
+    @media only screen and (max-width: 865px) {
+      grid-template-columns: minmax(300px, 1fr);
+      grid-row-gap: 2rem;
+    }
+  }
+}

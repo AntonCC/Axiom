@@ -9,7 +9,7 @@ const Navbar = ({ handleSidebar }) => {
         <div className="logo">Axiom</div>
         <ul>
           <li><NavLink exact to="/">Home</NavLink></li>
-          <li><NavLink exact to="/">About Us</NavLink></li>
+          <li><NavLink exact to="/about">About Us</NavLink></li>
           <li><NavLink exact to="/">Contact</NavLink></li>
         </ul>
         <NavLink className="header-cta" exact to="/">Buy Now</NavLink>
