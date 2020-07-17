@@ -1,7 +1,8 @@
 .about-cards {
+  margin-bottom: 2rem;
   .container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 600px));
+    grid-template-columns: repeat(2, minmax(300px, 650px));
     justify-content: space-between;
     grid-column-gap: 2rem;
   }

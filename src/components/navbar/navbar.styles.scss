@@ -63,7 +63,9 @@
 .navbar {
   .container {
     .logo {
-
+      @media only screen and (max-width: 865px) {
+        font-size: 2rem;
+      }
     }
     ul {
       @media only screen and (max-width: 865px) {

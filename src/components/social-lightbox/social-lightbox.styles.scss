@@ -37,7 +37,9 @@
 // Media Queries
 .lightbox {
   h2 {
-
+    @media only screen and (max-width: 860px) {
+      font-size: 1.5rem;
+    }
   }
   .container {
     @media only screen and (max-width: 860px) {

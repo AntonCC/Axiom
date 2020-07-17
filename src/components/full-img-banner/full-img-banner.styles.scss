@@ -11,3 +11,12 @@
     // font-weight: 400;
   }
 }
+
+// Media Query 865px
+@media only screen and (max-width: 865px) {
+  .full-img-banner {
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+}

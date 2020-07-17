@@ -6,6 +6,7 @@ import Sidebar from './components/sidebar/sidebar.component'
 import Backdrop from './components/backdrop/backdrop.component'
 import Home from './pages/home/home.component'
 import About from './pages/about/about.component'
+import Footer from './components/footer/footer.component'
 
 const routes = [
   {path: '/', name: "Home", component: Home},
@@ -26,13 +27,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Sidebar open={sidebar} />
+      <Sidebar open={sidebar} handleSidebar={handleSidebar}/>
       {openBackdrop}
       <div className={`App-inner ${sidebar ? 'blur' : ''}`}>
         <Navbar handleSidebar={handleSidebar}/>
         {routes.map(({path, component}) => (
           <Route exact path={path} component={component} />
         ))}
+        <Footer />
       </div>
     </div>
   );

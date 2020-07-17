@@ -3,17 +3,19 @@ import './banner.styles.scss'
 import BannerImg from '../../imgs/whitebg-headphones.jpg'
 import RoundedButton from '../../components/rounded-button/rounded-button.component'
 
-const Banner = () => {
+const Banner = (props) => {
+  const { title, img, body, btn } = props
+  console.log(title)
   return (
     <div className="banner">
       <div className="container">
         <div className="side-a">
-          <img src={BannerImg} alt="headphones"/>
+          <img src={img} alt="headphones"/>
         </div>
         <div className="side-b">
-          <h2>Get $50 Off On Axiom G1 Headphones</h2>
-          <h4>To celebrate the release of the Axiom G1 we are offering a discount for a limited time.</h4>
-          <RoundedButton btnPath="/" btnText="Learn More" />
+          <h2>{title}</h2>
+          <h4>{body}</h4>
+          {btn ? <RoundedButton btnPath={btn.path} btnText={btn.text} /> : null}
         </div>
       </div>
     </div>

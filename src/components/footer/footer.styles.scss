@@ -64,11 +64,14 @@ footer {
   }
 }
 
-// Media Queries
-footer {
-  .container {
-    @media only screen and (max-width: 715px) {
+// Media Queriy 715
+@media only screen and (max-width: 715px) {
+  footer {
+    .container {
       flex-direction: column;
+      .column {
+        margin-bottom: 2rem;
+      }
     }
   }
 }
