@@ -1,6 +1,8 @@
 .landing {
   min-height: calc(100vh - 80px);
   position: relative;
+  display: flex;
+  align-items: center;
   .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
