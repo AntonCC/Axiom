@@ -6,11 +6,13 @@ import Sidebar from './components/sidebar/sidebar.component'
 import Backdrop from './components/backdrop/backdrop.component'
 import Home from './pages/home/home.component'
 import About from './pages/about/about.component'
+import Buy from './pages/buy/buy.component'
 import Footer from './components/footer/footer.component'
 
 const routes = [
   {path: '/', name: "Home", component: Home},
-  {path: '/about', name: "About Us", component: About}
+  {path: '/about', name: "About Us", component: About},
+  {path: '/buy', name: 'Buy', component: Buy}
 ]
 
 const App = () => {
