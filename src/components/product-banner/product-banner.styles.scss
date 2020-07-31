@@ -126,7 +126,29 @@
       .side-b {
         grid-column: 1/2;
         order: 1;
+        max-height: 400px;
         img {
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .product-banner {
+    .container {
+      .side-a {
+        h2 {
+          font-size: 1.75rem;
+        }
+        h4 {
+          font-size: 1.125rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        h5 {
+
         }
       }
     }

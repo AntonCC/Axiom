@@ -9,7 +9,6 @@ import Lb6 from '../../imgs/lb6.jpg'
 
 const SocialLightbox = (props) => {
   const { openBackdrop, lightbox, openLightbox, imgClicked, lightboxImg } = props
-  console.log("From lightbox: ", props)
   
   const handleLightbox = (e) => {
     openLightbox(!lightbox)

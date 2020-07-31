@@ -3,7 +3,7 @@ import './rounded-button.styles.scss'
 import { NavLink } from 'react-router-dom'
 
 const RoundedButton = (props) => {
-  const { btnPath, btnText, inverse, white, fSize } = props
+  const { btnPath, btnText, handleSidebar, inverse, white, fSize } = props
   let btnClass = "cta";
 
   if(inverse) {
@@ -13,7 +13,7 @@ const RoundedButton = (props) => {
   }
   return (
     <div className="rounded-btn">
-      <NavLink className={ btnClass } exact to={btnPath} style={fSize ? {fontSize: fSize} : null}>{btnText}</NavLink>
+      <NavLink className={ btnClass } exact to={btnPath} onClick={handleSidebar} style={fSize ? {fontSize: fSize} : null}>{ btnText }</NavLink>
     </div>
   )
 }

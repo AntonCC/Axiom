@@ -11,7 +11,7 @@ const Sidebar = ({ open, handleSidebar }) => {
         <li><NavLink exact to="/about" onClick={handleSidebar}>About Us</NavLink></li>
         <li><NavLink exact to="/" onClick={handleSidebar}>Contact</NavLink></li>
       </ul>
-      <RoundedButton btnPath="/" btnText="Buy Now" white />
+      <RoundedButton btnPath="/buy" btnText="Buy Now" handleSidebar={handleSidebar} white />
     </nav>
   )
 }

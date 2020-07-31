@@ -10,8 +10,10 @@ const BuyLanding = () => {
           <img src={BuyHeadphones} alt="headphones"/>
         </div>
         <div className="side-b">
-          <h2>Save $50 on all models</h2>
-          <h5>To celebrate the launch of the Axiom G1 we are offering this discount for 30 days.</h5>
+          <div className="text-wrapper">
+            <h2>Save $50 on all models</h2>
+            <h5>To celebrate the launch of the Axiom G1 we are offering this discount for 30 days.</h5>
+          </div>
         </div>
       </div>
     </div>
