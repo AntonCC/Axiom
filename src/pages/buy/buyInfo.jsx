@@ -1,4 +1,5 @@
 import Product1 from '../../imgs/lb2.jpg'
+import Product2 from '../../imgs/product2.jpg'
 
 // switchSide false means img is on right side of desktop view
 export const productInfo = [
@@ -15,11 +16,11 @@ export const productInfo = [
   {
     id: 2,
     switchSide: true,
-    title: "Axiom TEST",
-    subTitle: "Testing",
-    description: "More testing.",
+    title: "Axiom C4",
+    subTitle: "Quality That Speaks For Itself",
+    description: "Experience the award winning Axiom quality, without breaking the bank. The Axiom C4 is now being offered at it's lowest price ever.",
     activePrice: "$129.99",
     lineThroughPrice: "$179.99",
-    productImg: Product1
+    productImg: Product2
   }
 ]

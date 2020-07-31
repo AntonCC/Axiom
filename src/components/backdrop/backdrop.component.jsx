@@ -1,9 +1,9 @@
 import React from 'react'
 import './backdrop.styles.scss'
 
-const Backdrop = ({ handleSidebar }) => {
+const Backdrop = ({ handleClick }) => {
   return (
-    <div className="backdrop" onClick={handleSidebar}/>
+    <div className="backdrop" onClick={handleClick}/>
   )
 }
 export default Backdrop

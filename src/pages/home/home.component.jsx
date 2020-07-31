@@ -16,13 +16,14 @@ const bannerInfo = {
   }
 }
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props)
   return (
     <div className="home">
       <Landing />
       <Hero />
       <Banner title={bannerInfo.title} img={bannerInfo.img} body={bannerInfo.body} btn={bannerInfo.btn}/>
-      <SocialLightbox />
+      <SocialLightbox {...props} />
     </div>
   )
 }
