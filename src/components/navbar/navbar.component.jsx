@@ -10,7 +10,7 @@ const Navbar = ({ handleSidebar }) => {
         <ul>
           <li><NavLink exact to="/">Home</NavLink></li>
           <li><NavLink exact to="/about">About Us</NavLink></li>
-          <li><NavLink exact to="/">Contact</NavLink></li>
+          <li><NavLink exact to="/contact">Contact</NavLink></li>
         </ul>
         <NavLink className="header-cta" exact to="/buy">Buy Now</NavLink>
 

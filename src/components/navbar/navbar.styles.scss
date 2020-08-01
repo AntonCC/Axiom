@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // background: lightblue;
     padding: 1rem 0;
     .logo {
       font-size: 2.5rem;
@@ -48,25 +47,19 @@
 }
 
 // Media Queries
-.navbar {
-  .container {
-    .logo {
-      @media only screen and (max-width: 865px) {
+@media only screen and (max-width: 865px) {
+  .navbar {
+    .container {
+      .logo {
         font-size: 2rem;
       }
-    }
-    ul {
-      @media only screen and (max-width: 865px) {
+      ul {
         display: none;
       }
-    }
-    .header-cta {
-      @media only screen and (max-width: 865px) {
+      .header-cta {
         display: none;
       }
-    }
-    .hamburger {
-      @media only screen and (max-width: 865px) {
+      .hamburger {
         position: relative;
         visibility: visible;
         cursor: pointer;

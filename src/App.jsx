@@ -7,6 +7,7 @@ import Backdrop from './components/backdrop/backdrop.component'
 import LightboxPicture from './components/lightbox-picture/lightbox-picture.component'
 import Home from './pages/home/home.component'
 import About from './pages/about/about.component'
+import Contact from './pages/contact/contact.component'
 import Buy from './pages/buy/buy.component'
 import Footer from './components/footer/footer.component'
 
@@ -58,7 +59,8 @@ const App = () => {
   const routes = [
     {path: '/', name: "Home", component: <Home openBackdrop={openBackdrop} lightbox={lightbox} openLightbox={openLightbox} imgClicked={imgClicked} lightboxImg={lightboxImg}/> },
     {path: '/about', name: "About Us", component: <About /> },
-    {path: '/buy', name: 'Buy', component: <Buy /> }
+    {path: '/buy', name: 'Buy', component: <Buy /> },
+    {path: '/contact', name: 'Contact', component: <Contact />}
   ]
 
   return (
