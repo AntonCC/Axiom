@@ -15,8 +15,10 @@
         margin-bottom: .5rem;
       }
       h4 {
-        margin-bottom: 1.5rem;
         font-weight: 400;
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
       }
     }
     .side-b {
@@ -41,6 +43,12 @@
         .group {
           display: flex;
           flex-direction: column;
+          label {
+            margin-bottom: .25rem;
+          }
+          input {
+            margin-bottom: .25rem;
+          }
         }
         .name-group {
           flex-direction: row;
@@ -68,13 +76,28 @@
   .contact-info-form {
     .container {
       grid-template-columns: 1fr;
+      grid-template-rows: auto;
       .side-a {
         padding: 2rem;
         align-items: center;
+        h4 {
+          word-wrap: break-word;
+        }
       }
       .side-b {
-        padding: 2rem;
+        padding: 0rem;
         align-items: center;
+        border-top: 0px;
+        border-left: 1px solid #d3d3d3;
+        form {
+          width: 70%;
+          .name-group {
+            flex-direction: column;
+            .first {
+              margin-right: 0;
+            }
+          }
+        }
       }
     }
   }
