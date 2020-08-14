@@ -12,6 +12,7 @@
       background: linear-gradient(to right, #22c1c3, #fdbb2d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      cursor: pointer;
     }
     ul {
       display: flex;
@@ -24,12 +25,31 @@
         }
       }
     }
-    .header-cta {
-      font-size: 1.125rem;
-      color: #222;
-      border: 1px solid #222;
-      padding: .5rem 2rem;
-      border-radius: 50px;
+    .cta-group {
+      display: flex;
+      align-items: center;
+      .shopping-icon {
+        position: relative;
+        margin-right: 2rem;
+        cursor: pointer;  
+        .shopping-bag {
+          height: 30px;
+          width: 30px;
+        }
+        span {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          font-size: .9rem;
+        }
+      }
+      .header-cta {
+        font-size: 1.125rem;
+        color: #222;
+        border: 1px solid #222;
+        padding: .5rem 2rem;
+        border-radius: 50px;
+      }
     }
     .hamburger {
       position: absolute;
@@ -56,7 +76,7 @@
       ul {
         display: none;
       }
-      .header-cta {
+      .cta-group {
         display: none;
       }
       .hamburger {

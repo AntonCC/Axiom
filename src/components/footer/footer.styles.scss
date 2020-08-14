@@ -42,6 +42,11 @@ footer {
       .icons {
         i {
           color: #fff;
+          cursor: pointer;
+          transition: 150ms;
+          &:hover {
+            transform: scale(1.1);
+          }
           &:not(:last-child) {
             margin-right: .5rem;
           }
@@ -57,6 +62,9 @@ footer {
           a {
             color: #fff;
             opacity: .6;
+            &:hover {
+              opacity: 1;
+            }
           }
         }
       }
