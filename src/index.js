@@ -5,7 +5,7 @@ import App from './App.jsx';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/headphone-store">
     <React.StrictMode>
       <App />
     </React.StrictMode>

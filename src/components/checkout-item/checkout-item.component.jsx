@@ -1,6 +1,8 @@
 import React from 'react'
 import './checkout-item.styles.scss'
 import Headphones from '../../imgs/product2.jpg'
+import { ReactComponent as Left } from '../../imgs/angle-left-solid.svg'
+import { ReactComponent as Right } from '../../imgs/angle-right-solid.svg'
 
 const CheckoutItem = () => {
   return (
@@ -17,7 +19,7 @@ const CheckoutItem = () => {
             <span>Axiom G1 Headphones</span>
           </div>
           <div className="quantity">2</div>
-          <div className="price">$200</div>
+          <div className="price"><Left />$200<Right /></div>
         </div>
       </div>
     </div>
