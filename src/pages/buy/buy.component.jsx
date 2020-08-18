@@ -8,8 +8,8 @@ const Buy = () => {
   return (
     <div className="buy">
       <BuyLanding />
-      {productInfo.map(info => (
-        <ProductBanner productInfo={info}/>
+      {productInfo.map(item => (
+        <ProductBanner item={item}/>
       ))}
     </div>
   )

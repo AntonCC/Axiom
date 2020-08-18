@@ -24,5 +24,16 @@ export const productInfo = [
     listPrice: "$179.99",
     productImg: Product2,
     quantity: 1
+  },
+  {
+    id: 3,
+    switchSide: false,
+    title: "Axiom T5",
+    subTitle: "Quality That Speaks For Itself",
+    description: "Experience the award winning Axiom quality, without breaking the bank. The Axiom C4 is now being offered at it's lowest price ever.",
+    activePrice: "$129.99",
+    listPrice: "$179.99",
+    productImg: Product2,
+    quantity: 1
   }
 ]

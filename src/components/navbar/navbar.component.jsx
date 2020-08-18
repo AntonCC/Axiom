@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import './navbar.styles.scss'
 import { NavLink } from 'react-router-dom'
 import { ReactComponent as ShoppingBag } from '../../imgs/shopping-bag.svg'
+import { connect } from 'react-redux'
 
-const Navbar = ({ handleSidebar }) => {
+const Navbar = (props) => {
+  const { handleSidebar, cartItems } = props
   return (
     <div className="navbar">
       <div className="container">
@@ -14,10 +16,12 @@ const Navbar = ({ handleSidebar }) => {
           <li><NavLink exact to="/contact">Contact</NavLink></li>
         </ul>
         <div className="cta-group">
-          <div className="shopping-icon">
-            <ShoppingBag className="shopping-bag" />
-            <span>0</span>
-          </div>
+          <NavLink exact to="/checkout">
+            <div className="shopping-icon">
+              <ShoppingBag className="shopping-bag" />
+              <span>{cartItems ? cartItems.length : 0}</span>
+            </div>
+          </NavLink>
           <NavLink className="header-cta" exact to="/buy">Buy Now</NavLink>
         </div>
 
@@ -30,4 +34,9 @@ const Navbar = ({ handleSidebar }) => {
     </div>
   )
 }
-export default Navbar
+
+const mapStateToProps = (state) => ({
+  cartItems: state.cartReducer.cartItems
+})
+
+export default connect(mapStateToProps)(Navbar)

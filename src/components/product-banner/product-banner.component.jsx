@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { addItem } from '../../redux/cart/cart.actions'
 
 const ProductBanner = (props) => {
-  const { switchSide, title, subTitle, description, activePrice, listPrice, productImg } = props.productInfo
+  const { switchSide, title, subTitle, description, activePrice, listPrice, productImg } = props.item
   const { addItem } = props
   const [switchClass, setSwitchClass] = useState(null)
 
@@ -26,7 +26,7 @@ const ProductBanner = (props) => {
           <p>{ description }</p>
           <h5 className="active-price">{ activePrice }</h5>
           <h5 className="line-through">{ listPrice }</h5>
-          <div className="purchase-btn" onClick={() => addItem(productInfo)}>Purchase</div>
+          <div className="purchase-btn" onClick={() => addItem(props.item)}>Purchase</div>
         </div>
         <div className="social-icons">
           <Facebook className="facebook-icon" />
@@ -41,7 +41,7 @@ const ProductBanner = (props) => {
   )
 }
 const mapDispatchToProps = dispatch => ({
-  addItem: () => dispatch(addItem(item))
+  addItem: (item) => dispatch(addItem(item))
 })
 
 export default connect(null, mapDispatchToProps)(ProductBanner)

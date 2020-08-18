@@ -1,8 +1,16 @@
 import { combineReducers } from 'redux'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import cartReducer from './cart/cartReducer'
 
-const rootReducer = ({
-  countReducer: countReducer
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['cartReducer']
+}
+
+const rootReducer = combineReducers({
+  cartReducer: cartReducer
 })
 
-export default rootReducer
+export default persistReducer(persistConfig, rootReducer)
