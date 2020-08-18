@@ -5,7 +5,7 @@ import { ReactComponent as Plus } from '../../imgs/plus-solid.svg'
 import { ReactComponent as Trash } from '../../imgs/trash-alt-solid.svg'
 import Headphones from '../../imgs/lb2.jpg'
 
-const Cart = () => {
+const CartItem = () => {
   return (
     <div className="cart-item">
       <div className="container">
@@ -43,4 +43,4 @@ const Cart = () => {
     </div>
   )
 }
-export default Cart
+export default CartItem
