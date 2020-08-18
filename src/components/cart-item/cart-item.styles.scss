@@ -1,7 +1,8 @@
-.cart {
+.cart-item {
   max-width: 800px;
   width: 100%;
-  padding: 5rem 0;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #dedede;
   .container {
     display: flex;
     .side-a {
@@ -21,7 +22,14 @@
         display: flex;
         justify-content: space-between;
         .description {
-
+          h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+          }
+          h5 {
+            margin-bottom: .5rem;
+            opacity: .7;
+          }
         }
         .quantity {
           display: flex;
@@ -39,6 +47,7 @@
             border: 1px solid #dedede;
             border-bottom-left-radius: 5px;
             border-top-left-radius: 5px;
+            cursor: pointer;
           }
           .amount {
             border-top: 1px solid #dedede;
@@ -48,6 +57,7 @@
             border: 1px solid #dedede;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
+            cursor: pointer;
           }
           svg {
             height: 15px;
@@ -60,14 +70,16 @@
         justify-content: space-between;
         .remove-item {
           display: flex;
+          margin-bottom: 1rem;
+          cursor: pointer;
           // align-items: baseline;
           svg {
             height: 15px;
             width: 15px;
             margin-right: .5rem;
           }
-          p {
-            line-height: 1;
+          h5 {
+            // line-height: 1;
           }
         }
       }

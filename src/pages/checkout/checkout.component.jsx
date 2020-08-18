@@ -1,11 +1,13 @@
 import React from 'react'
 import './checkout.styles.scss'
-import Cart from '../../components/cart/cart.component'
+import CartItem from '../../components/cart-item/cart-item.component'
 
 const Checkout = () => {
   return (
     <div className="checkout">
-      <Cart />
+      <h2>Checkout</h2>
+      <CartItem />
+      <CartItem />
     </div>
   )
 }

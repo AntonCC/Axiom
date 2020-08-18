@@ -8,7 +8,7 @@ const Navbar = ({ handleSidebar }) => {
     <div className="navbar">
       <div className="container">
         <div className="logo"><NavLink exact to ="/">Axiom</NavLink></div>
-        <ul>
+        <ul className="nav-list">
           <li><NavLink exact to="/">Home</NavLink></li>
           <li><NavLink exact to="/about">About Us</NavLink></li>
           <li><NavLink exact to="/contact">Contact</NavLink></li>
