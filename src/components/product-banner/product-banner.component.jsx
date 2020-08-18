@@ -5,7 +5,7 @@ import { ReactComponent as Twitter } from '../../imgs/twitter.svg'
 import { ReactComponent as Instagram } from '../../imgs/instagram.svg'
 
 const ProductBanner = (props) => {
-  const { switchSide, title, subTitle, description, activePrice, lineThroughPrice, productImg } = props.productInfo
+  const { switchSide, title, subTitle, description, activePrice, listPrice, productImg } = props.productInfo
   const [switchClass, setSwitchClass] = useState(null)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const ProductBanner = (props) => {
           <h4>{ subTitle }</h4>
           <p>{ description }</p>
           <h5 className="active-price">{ activePrice }</h5>
-          <h5 className="line-through">{ lineThroughPrice }</h5>
+          <h5 className="line-through">{ listPrice }</h5>
           <div className="purchase-btn">Purchase</div>
         </div>
         <div className="social-icons">

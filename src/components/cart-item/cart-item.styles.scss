@@ -86,3 +86,16 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .cart-item {
+    .container {
+      flex-direction: column;
+      .side-a {
+        img {
+          margin-bottom: .5rem;
+        }
+      }
+    }
+  }
+}

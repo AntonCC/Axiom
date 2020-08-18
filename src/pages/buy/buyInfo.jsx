@@ -10,7 +10,7 @@ export const productInfo = [
     subTitle: "TrueSound Technology",
     description: "For the best sound experience, turn to the Axiom G1. With all new and upgraded drivers, the sound quality is unmatched.",
     activePrice: "$149.99",
-    lineThroughPrice: "$199.99",
+    listPrice: "$199.99",
     productImg: Product1
   },
   {
@@ -20,7 +20,7 @@ export const productInfo = [
     subTitle: "Quality That Speaks For Itself",
     description: "Experience the award winning Axiom quality, without breaking the bank. The Axiom C4 is now being offered at it's lowest price ever.",
     activePrice: "$129.99",
-    lineThroughPrice: "$179.99",
+    listPrice: "$179.99",
     productImg: Product2
   }
 ]
