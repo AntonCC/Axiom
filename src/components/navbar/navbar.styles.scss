@@ -43,18 +43,20 @@
         position: relative;
         margin-right: 2rem;
         cursor: pointer;
-        display: flex;
+      display: flex;
         justify-content: center;
-        align-items: center;  
+        align-items: center;
         .shopping-bag {
           height: 30px;
           width: 30px;
+          position: absolute;
         }
         span {
-          position: absolute;
-          top: 10px;
-          left: 10px;
+          // position: absolute;
+          // top: 10px;
+          // left: 10px;
           font-size: .9rem;
+          margin-top: .5rem;
         }
       }
       .header-cta {
