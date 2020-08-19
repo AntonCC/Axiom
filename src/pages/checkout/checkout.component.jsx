@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './checkout.styles.scss'
 import { connect } from 'react-redux'
 import CartItem from '../../components/cart-item/cart-item.component'
 
 const Checkout = ({ cartItems }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="checkout">
       <h2>Checkout</h2>

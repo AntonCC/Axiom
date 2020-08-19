@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './about.styles.scss'
 import WomanBlur from '../../imgs/woman-blur.jpg'
 import FullImgBanner from '../../components/full-img-banner/full-img-banner.component'
@@ -11,6 +11,10 @@ const cardInfo = {title: "What's Important", img: WomanBlur, body: "When it come
 const bannerInfo = {title: "Our Mission", img: WomanBlur, body: "To enrich peoples lives, and provide transcendant musical experiences, through high quality sound."}
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="about">
       <FullImgBanner />

@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './navbar.styles.scss'
 import { NavLink } from 'react-router-dom'
 import { ReactComponent as ShoppingBag } from '../../imgs/shopping-bag.svg'
 import { connect } from 'react-redux'
+import ShoppingIcon from '../shopping-icon/shopping-icon.component'
 
 const Navbar = (props) => {
   const { handleSidebar, cartItems } = props
+
+
+
   return (
     <div className="navbar">
       <div className="container">
@@ -17,10 +21,7 @@ const Navbar = (props) => {
         </ul>
         <div className="cta-group">
           <NavLink exact to="/checkout">
-            <div className="shopping-icon">
-              <ShoppingBag className="shopping-bag" />
-              <span>{cartItems ? cartItems.length : 0}</span>
-            </div>
+            <ShoppingIcon />
           </NavLink>
           <NavLink className="header-cta" exact to="/buy">Buy Now</NavLink>
         </div>
