@@ -12,7 +12,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router basename="/headphone-store">
       <PersistGate persistor={persistor}>
-        <ToastProvider>
+        <ToastProvider placement="bottom-right">
           <React.StrictMode>
             <App />
           </React.StrictMode>

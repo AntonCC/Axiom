@@ -10,6 +10,7 @@ import { useToasts } from 'react-toast-notifications'
 const ProductBanner = (props) => {
   const { id, switchSide, title, subTitle, description, activePrice, listPrice, productImg } = props.item
   const { cartItems, addItem } = props
+  // controls which side img is on
   const [switchClass, setSwitchClass] = useState(null)
   const { addToast } = useToasts()
 
@@ -18,7 +19,7 @@ const ProductBanner = (props) => {
       setSwitchClass(" switch")
     }
   }, [])
-
+  // success toast if first of type in cart, info toast if not
   const handleClick = () => {
     const existingCartItem = cartItems.find(cartItem => id === cartItem.id)
     if(!existingCartItem) {
@@ -36,7 +37,7 @@ const ProductBanner = (props) => {
           <h2>{ title }</h2>
           <h4>{ subTitle }</h4>
           <p>{ description }</p>
-          <h5 className="active-price">{ activePrice }</h5>
+          <h5 className="active-price">{ `$${activePrice}` }</h5>
           <h5 className="line-through">{ listPrice }</h5>
           <div className="purchase-btn" onClick={handleClick}>Purchase</div>
         </div>

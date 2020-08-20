@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/navbar/navbar.component'
 import MobileNavbar from './components/mobile-navbar/mobile-navbar.component'
 import Sidebar from './components/sidebar/sidebar.component'
@@ -12,7 +13,6 @@ import Contact from './pages/contact/contact.component'
 import Buy from './pages/buy/buy.component'
 import Checkout from './pages/checkout/checkout.component'
 import Footer from './components/footer/footer.component'
-import ShoppingIcon from './components/shopping-icon/shopping-icon.component'
 
 const App = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -22,9 +22,6 @@ const App = () => {
   const [imgClicked, setImgClicked] = useState(null)
   const [lightbox, setLightbox] = useState(false)
   // Mini side cart
-  const [showSideCart, setSideCart] = useState(false)
-  const navRef = useRef(null)
-
 
   const openSidebar = () => {
     setSidebar(true)
@@ -81,30 +78,13 @@ const App = () => {
     }
   }
 
-  const debouncedHandleScroll = debounce(function handleScroll() {
-    if(navRef.current.getBoundingClientRect().bottom <= window.pageYOffset) {
-      setSideCart(true)
-    } else if(navRef.current.getBoundingClientRect().bottom >= window.pageYOffset){
-      setSideCart(false)
-    }
-  }, 250)
-
-  useEffect(() => {
-    window.addEventListener('scroll', debouncedHandleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', debouncedHandleScroll)
-    }
-  }, [])
-
   return (
     <div className="App">
       <Sidebar open={sidebar} handleSidebar={closeAll}/>
       {renderBackdrop}
       {renderLightbox}
       <div className={`App-inner ${appBlur ? 'blur' : ''}`}>
-        {showSideCart ? <MobileNavbar/> : ''}
-        <div className="nav-wrapper" ref={navRef}>
+        <div className="nav-wrapper">
           <Navbar handleSidebar={openSidebar}/>
         </div>
         {routes.map(({path, name, component}) => (

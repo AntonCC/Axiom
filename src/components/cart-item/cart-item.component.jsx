@@ -7,7 +7,7 @@ import { ReactComponent as Plus } from '../../imgs/plus-solid.svg'
 import { ReactComponent as Trash } from '../../imgs/trash-alt-solid.svg'
 
 const CartItem = (props) => {
-  const {item: { title, activePrice, productImg, quantity}} = props
+  const { item: { title, activePrice, productImg, quantity} } = props
   const { item, addItem, removeItem, increaseItem, decreaseItem } = props
   return (
     <div className="cart-item">
@@ -38,7 +38,7 @@ const CartItem = (props) => {
               <h5>Remove-item</h5>
             </div>
             <div className="total">
-              <h4>{ activePrice }</h4>
+              <h4>{ `$${activePrice}` }</h4>
             </div>
           </div>
         </div>
