@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/navbar/navbar.component'
-import MobileNavbar from './components/mobile-navbar/mobile-navbar.component'
 import Sidebar from './components/sidebar/sidebar.component'
 import Backdrop from './components/backdrop/backdrop.component'
 import LightboxPicture from './components/lightbox-picture/lightbox-picture.component'
@@ -67,16 +65,16 @@ const App = () => {
     {path: '/checkout', name: 'Checkout', component: <Checkout />}
   ]
 
-  function debounce(fn, ms) {
-    let timer;
-    return () => {
-      clearTimeout(timer)
-      timer = setTimeout(() => {
-        timer = null
-        fn.apply(this, arguments)
-      }, ms)
-    }
-  }
+  // function debounce(fn, ms) {
+  //   let timer;
+  //   return () => {
+  //     clearTimeout(timer)
+  //     timer = setTimeout(() => {
+  //       timer = null
+  //       fn.apply(this, arguments)
+  //     }, ms)
+  //   }
+  // }
 
   return (
     <div className="App">

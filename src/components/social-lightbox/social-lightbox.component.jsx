@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './social-lightbox.styles.scss'
 import Lb1 from '../../imgs/lb1.jpg'
 import Lb2 from '../../imgs/lb2.jpg'
@@ -8,7 +8,7 @@ import Lb5 from '../../imgs/lb5.jpg'
 import Lb6 from '../../imgs/lb6.jpg'
 
 const SocialLightbox = (props) => {
-  const { openBackdrop, lightbox, openLightbox, imgClicked, lightboxImg } = props
+  const { openBackdrop, lightbox, openLightbox, lightboxImg } = props
   
   const handleLightbox = (e) => {
     openLightbox(!lightbox)

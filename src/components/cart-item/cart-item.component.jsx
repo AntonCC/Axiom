@@ -1,14 +1,14 @@
 import React from 'react'
 import './cart-item.styles.scss'
 import { connect } from 'react-redux'
-import { addItem, removeItem, increaseItem, decreaseItem } from '../../redux/cart/cart.actions'
+import { removeItem, increaseItem, decreaseItem } from '../../redux/cart/cart.actions'
 import { ReactComponent as Minus } from '../../imgs/minus-solid.svg'
 import { ReactComponent as Plus } from '../../imgs/plus-solid.svg'
 import { ReactComponent as Trash } from '../../imgs/trash-alt-solid.svg'
 
 const CartItem = (props) => {
   const { item: { title, activePrice, productImg, quantity} } = props
-  const { item, addItem, removeItem, increaseItem, decreaseItem } = props
+  const { item, removeItem, increaseItem, decreaseItem } = props
   return (
     <div className="cart-item">
       <div className="container">
@@ -47,7 +47,6 @@ const CartItem = (props) => {
   )
 }
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item)),
   removeItem: item => dispatch(removeItem(item)),
   increaseItem: item => dispatch(increaseItem(item)),
   decreaseItem: item => dispatch(decreaseItem(item))

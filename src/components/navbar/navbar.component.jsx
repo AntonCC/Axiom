@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import './navbar.styles.scss'
 import { NavLink } from 'react-router-dom'
-import { ReactComponent as ShoppingBag } from '../../imgs/shopping-bag.svg'
 import { connect } from 'react-redux'
 import ShoppingIcon from '../shopping-icon/shopping-icon.component'
 
-const Navbar = (props) => {
-  const { handleSidebar, cartItems } = props
-
-
+const Navbar = ({ handleSidebar }) => {
 
   return (
     <div className="navbar">

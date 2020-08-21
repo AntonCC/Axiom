@@ -1,8 +1,10 @@
 import React from 'react'
 import './purchase.styles.scss'
+import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 
 const Purchase = ({ cartAmount }) => {
-  const tax = cartAmount *.0875
+  const tax = (cartAmount *.0875).toFixed(2)
+  const cartTotal = (cartAmount + parseInt(tax))
 
   return (
     <div className="purchase">
@@ -10,7 +12,7 @@ const Purchase = ({ cartAmount }) => {
         <h4>The total amount of</h4>
         <span>
           <p>Item Total:</p>
-          <p>${ cartAmount.toFixed(2) }</p>
+          <p>${ cartAmount }</p>
         </span>
         <span>
           <p>Shipping:</p>
@@ -18,12 +20,13 @@ const Purchase = ({ cartAmount }) => {
         </span>
         <span>
           <p>Tax:</p>
-          <p>${ tax.toFixed(2) }</p>
+          <p>${ tax }</p>
         </span>
         <span>
           <p className="total">Order Total:</p>
-          <p className="price">${ (cartAmount + tax).toFixed(2) }</p>
+          <p className="price">${ cartTotal }</p>
         </span>
+        <StripeCheckoutButton price={cartTotal}/>
       </div>
     </div>
   )

@@ -17,21 +17,24 @@ const Checkout = ({ cartItems }) => {
       cartTotal+=(cartItem.activePrice * cartItem.quantity)
     })
     setCartAmount(cartTotal)
-    // console.log('Total', cartTotal)
-    // console.log('Cart', cartAmounts)
   } ,[cartItems, cartAmount])
 
   return (
     <div className="checkout">
         <h2>Checkout</h2>
         <div className="page-wrap">
-          { cartItems.length === 0 
-            ? <h4 className="empty-cart">Your Cart Is Empty. Press Buy Now and add the items you would like to purchase.</h4>
-            :  cartItems.map(cartItem => (
-                <CartItem item={cartItem}/>
-              ))
+          { 
+            cartItems.length === 0 
+              ? <h4 className="empty-cart">Your Cart Is Empty. Press Buy Now and add the items you would like to purchase.</h4>
+              :  cartItems.map(cartItem => (
+                  <CartItem item={cartItem}/>
+                ))
           }
-          <Purchase className="purchase-group" cartAmount={cartAmount}/>
+          {
+            cartAmount !== 0
+              ? <Purchase className="purchase-group" cartAmount={cartAmount}/>
+              : ''
+          }
         </div>
     </div>
   )

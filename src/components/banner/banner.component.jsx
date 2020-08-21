@@ -1,6 +1,5 @@
 import React from 'react'
 import './banner.styles.scss'
-import BannerImg from '../../imgs/whitebg-headphones.jpg'
 import RoundedButton from '../../components/rounded-button/rounded-button.component'
 
 const Banner = (props) => {

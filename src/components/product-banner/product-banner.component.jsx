@@ -18,7 +18,7 @@ const ProductBanner = (props) => {
     if(switchSide === true) {
       setSwitchClass(" switch")
     }
-  }, [])
+  }, [switchSide])
   // success toast if first of type in cart, info toast if not
   const handleClick = () => {
     const existingCartItem = cartItems.find(cartItem => id === cartItem.id)

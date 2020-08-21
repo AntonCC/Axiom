@@ -1,9 +1,5 @@
 import React from 'react'
 import './landing.styles.scss'
-import { NavLink } from 'react-router-dom'
-import {ReactComponent as BigCircle} from '../../imgs/big-eclipse.svg'
-import {ReactComponent as MediumCircle} from '../../imgs/mid-eclipse.svg'
-import SmallCircle from '../../imgs/small-eclipse.svg'
 import Headphone from '../../imgs/headphones.png'
 import RoundedButton from '../rounded-button/rounded-button.component'
 
