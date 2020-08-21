@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="text-background">
           <h2>Noise Cancelling Means Silence Anywhere</h2>
           <h4>Experience your music without distraction</h4>
-          <RoundedButton btnPath="/" btnText="Shop" />
+          <RoundedButton btnPath="/buy" btnText="Shop" />
         </div>
       </div>
     </div>

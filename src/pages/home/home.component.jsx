@@ -11,7 +11,7 @@ const bannerInfo = {
   img: BannerImg, 
   body: "To celebrate the release of the Axiom G1 we are offering a discount for a limited time.",
   btn: {
-    path: "/",
+    path: "/buy",
     text: "Learn More"
   }
 }
@@ -25,7 +25,7 @@ const Home = (props) => {
     <div className="home">
       <Landing />
       <Hero />
-      <Banner title={bannerInfo.title} img={bannerInfo.img} body={bannerInfo.body} btn={bannerInfo.btn}/>
+      <Banner {...bannerInfo}/>
       <SocialLightbox {...props} />
     </div>
   )

@@ -11,8 +11,8 @@ const Landing = () => {
           <h2>Headphones for <strong className="underline">all</strong> your music</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel tempore aliquid deleniti repellendus qui commodi?</p>
           <div className="landing-cta">
-            <RoundedButton className="landing-btn" btnPath="/" btnText="Learn More" /> 
-            <RoundedButton className="landing-btn" btnPath="/" btnText="View Models" inverse />        
+            <RoundedButton className="landing-btn" btnPath="/about" btnText="Learn More" /> 
+            <RoundedButton className="landing-btn" btnPath="/buy" btnText="View Models" inverse />        
           </div>
         </div>
         <div className="side-b">

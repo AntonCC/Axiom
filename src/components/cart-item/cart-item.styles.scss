@@ -2,7 +2,17 @@
   max-width: 800px;
   width: 100%;
   padding: 2.5rem 0;
-  border-bottom: 1px solid #dedede;
+  // border-bottom: 1px solid #dedede;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    background: #dedede;
+    left: 10%;
+    bottom: 0;
+  }
   .container {
     display: flex;
     width: 100%;

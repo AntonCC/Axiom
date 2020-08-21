@@ -4,7 +4,6 @@ import RoundedButton from '../../components/rounded-button/rounded-button.compon
 
 const Banner = (props) => {
   const { title, img, body, btn } = props
-  console.log(title)
   return (
     <div className="banner">
       <div className="container">
