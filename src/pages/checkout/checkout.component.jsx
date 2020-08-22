@@ -3,9 +3,12 @@ import './checkout.styles.scss'
 import { connect } from 'react-redux'
 import CartItem from '../../components/cart-item/cart-item.component'
 import Purchase from '../../components/purchase/purchase.component'
+import PaymentModal from '../../components/payment-modal/payment-modal.component'
+
 
 const Checkout = ({ cartItems }) => {
   const [cartAmount, setCartAmount] = useState(0)
+  const [openModal, setModal] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -21,7 +24,8 @@ const Checkout = ({ cartItems }) => {
 
   return (
     <div className="checkout">
-        <h2>Checkout</h2>
+        <h2 className="checkout-title">Checkout</h2>
+        <PaymentModal />
         <div className="page-wrap">
           { 
             cartItems.length === 0 
@@ -32,7 +36,7 @@ const Checkout = ({ cartItems }) => {
           }
           {
             cartAmount !== 0
-              ? <Purchase className="purchase-group" cartAmount={cartAmount}/>
+              ? <Purchase className="purchase-group" cartAmount={cartAmount} cartItem={cartItems}/>
               : ''
           }
         </div>

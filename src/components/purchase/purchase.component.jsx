@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './purchase.styles.scss'
-import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 
 const Purchase = ({ cartAmount }) => {
   const tax = (cartAmount *.0875).toFixed(2)
   const cartTotal = (cartAmount + parseInt(tax))
+  const [openModal, setModal] = useState(false)
+
+  const handleClick = () => {
+    setModal(!openModal)
+  }
 
   return (
     <div className="purchase">
@@ -26,7 +30,7 @@ const Purchase = ({ cartAmount }) => {
           <p className="total">Order Total:</p>
           <p className="price">${ cartTotal }</p>
         </span>
-        <StripeCheckoutButton price={cartTotal}/>
+        <div className="pay-btn" onClick={handleClick}>Pay</div>
       </div>
     </div>
   )
