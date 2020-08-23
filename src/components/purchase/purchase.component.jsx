@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './purchase.styles.scss'
+import { connect } from 'react-redux'
+import { openModal } from '../../redux/modal/modal.actions'
 
-const Purchase = ({ cartAmount }) => {
+const Purchase = ({ cartAmount, openModal }) => {
   const tax = (cartAmount *.0875).toFixed(2)
   const cartTotal = (cartAmount + parseInt(tax))
-  const [openModal, setModal] = useState(false)
-
-  const handleClick = () => {
-    setModal(!openModal)
-  }
 
   return (
     <div className="purchase">
@@ -30,9 +27,14 @@ const Purchase = ({ cartAmount }) => {
           <p className="total">Order Total:</p>
           <p className="price">${ cartTotal }</p>
         </span>
-        <div className="pay-btn" onClick={handleClick}>Pay</div>
+        <div className="checkout-btn" onClick={openModal}>Checkout</div>
       </div>
     </div>
   )
 }
-export default Purchase
+
+const mapDispatchToProps = dispatch => ({
+  openModal: () => dispatch(openModal())
+})
+
+export default connect(null, mapDispatchToProps)(Purchase)

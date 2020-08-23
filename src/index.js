@@ -10,14 +10,14 @@ import { store, persistor } from './redux/store'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 
-const stripePromise = loadStripe('pk_test_Z7jJCliZV8OSj3W5iv3dI2yg0074ZWtPBk')
+const stripe = loadStripe('pk_test_Z7jJCliZV8OSj3W5iv3dI2yg0074ZWtPBk')
 
 ReactDOM.render(
   <Provider store={store}>
     <Router basename="/headphone-store">
       <PersistGate persistor={persistor}>
         <ToastProvider placement="bottom-right">
-          <Elements stripe={stripePromise}>
+          <Elements stripe={stripe}>
             <React.StrictMode>
               <App />
             </React.StrictMode>

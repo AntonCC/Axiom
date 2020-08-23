@@ -1,43 +1,56 @@
-.payment-modal {
+.wrapper {
+  width: 100%;
+  height: 100%;
   position: fixed;
-  // height: 400px;
-  width: 400px;
-  border: 1px solid #111;
-  z-index: 200;
   display: flex;
-  flex-direction: column;
-  .top {
-    background: #ededed 	;
-    height: 30%;
-    h2 {
-      text-align: center;
-      padding: 2rem 0;
-    }
-  }
-  .bottom {
-    background: #fafafa;
-    width: 100%;
-    padding: 2rem 1rem;
-    form {
-      margin: 0 auto;
-      width: 300px;
-      input {
-        width: 100%;
-        margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  .payment-modal {
+    width: 400px;
+    border: 1px solid #111;
+    .top {
+      background: #ededed 	;
+      height: 30%;
+      h2 {
+        text-align: center;
+        padding: 2rem 0;
       }
-      .row {
-        display: flex;
-        justify-content: space-between;
+    }
+    .bottom {
+      background: #fafafa;
+      width: 100%;
+      padding: 2rem 1rem;
+      form {
+        margin: 0 auto;
+        width: 300px;
         input {
-          width: 48%;
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+          input {
+            width: 48%;
+          }
+        }
+        .element-wrapper {
+          background: #fff;
+          padding: .5rem;
+          border: 1px solid #dedede;
+          border-radius: 3px;
+          width: 100%;
+          margin-bottom: 1rem;
         }
       }
-      .element-wrapper {
-        background: #fff;
-        padding: .5rem;
-        border: 1px solid #dedede;
-        border-radius: 3px;
-        width: 100%;
+      .pay-btn {
+        padding: .5rem 2.5rem;
+        background: #0b2e77;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
       }
     }
   }

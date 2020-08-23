@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Navbar from './components/navbar/navbar.component'
 import Sidebar from './components/sidebar/sidebar.component'
 import Backdrop from './components/backdrop/backdrop.component'
 import LightboxPicture from './components/lightbox-picture/lightbox-picture.component'
+import PaymentModal from './components/payment-modal/payment-modal.component'
+
 import Home from './pages/home/home.component'
 import About from './pages/about/about.component'
 import Contact from './pages/contact/contact.component'
@@ -12,7 +15,7 @@ import Buy from './pages/buy/buy.component'
 import Checkout from './pages/checkout/checkout.component'
 import Footer from './components/footer/footer.component'
 
-const App = () => {
+const App = ({ isModalOpen }) => {
   const [sidebar, setSidebar] = useState(false)
   const [backdrop, setBackdrop] = useState(false)
   const [appBlur, setAppBlur] = useState(false)
@@ -62,7 +65,7 @@ const App = () => {
     {path: '/about', name: "About Us", component: <About /> },
     {path: '/buy', name: 'Buy', component: <Buy /> },
     {path: '/contact', name: 'Contact', component: <Contact />},
-    {path: '/checkout', name: 'Checkout', component: <Checkout />}
+    {path: '/checkout', name: 'Checkout', component: <Checkout openBackdrop={openBackdrop}/>}
   ]
 
   // function debounce(fn, ms) {
@@ -81,6 +84,11 @@ const App = () => {
       <Sidebar open={sidebar} handleSidebar={closeAll}/>
       {renderBackdrop}
       {renderLightbox}
+      {
+        isModalOpen
+          ? <PaymentModal />
+          : ''
+      }
       <div className={`App-inner ${appBlur ? 'blur' : ''}`}>
         <div className="nav-wrapper">
           <Navbar handleSidebar={openSidebar}/>
@@ -94,5 +102,8 @@ const App = () => {
   );
 }
 
+const mapStateToProps = state => ({
+  isModalOpen: state.modalReducer.isModalOpen
+})
 
-export default App;
+export default connect(mapStateToProps)(App);
