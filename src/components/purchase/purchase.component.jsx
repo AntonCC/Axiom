@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './purchase.styles.scss'
 import { connect } from 'react-redux'
 import { openModal } from '../../redux/modal/modal.actions'
+import { calcOrderTotal, calcOrderTax } from '../../redux/cart/cart.actions'
 
-const Purchase = ({ cartAmount, openModal }) => {
-  const tax = (cartAmount *.0875).toFixed(2)
-  const cartTotal = (cartAmount + parseInt(tax))
+const Purchase = ({ cartTotal, orderTotal, orderTax, calcOrderTotal, calcOrderTax, openModal }) => {
+
+  useEffect(() => {
+    calcOrderTotal(cartTotal)
+    calcOrderTax(cartTotal)
+  }, [cartTotal])
 
   return (
     <div className="purchase">
@@ -13,7 +17,7 @@ const Purchase = ({ cartAmount, openModal }) => {
         <h4>The total amount of</h4>
         <span>
           <p>Item Total:</p>
-          <p>${ cartAmount }</p>
+          <p>${ cartTotal }</p>
         </span>
         <span>
           <p>Shipping:</p>
@@ -21,11 +25,11 @@ const Purchase = ({ cartAmount, openModal }) => {
         </span>
         <span>
           <p>Tax:</p>
-          <p>${ tax }</p>
+          <p>${ orderTax }</p>
         </span>
         <span>
           <p className="total">Order Total:</p>
-          <p className="price">${ cartTotal }</p>
+          <p className="price">${ orderTotal }</p>
         </span>
         <div className="checkout-btn" onClick={openModal}>Checkout</div>
       </div>
@@ -33,8 +37,16 @@ const Purchase = ({ cartAmount, openModal }) => {
   )
 }
 
-const mapDispatchToProps = dispatch => ({
-  openModal: () => dispatch(openModal())
+const mapStateToProps = state => ({
+  cartTotal: state.cartReducer.cartTotal,
+  orderTotal: state.cartReducer.orderTotal,
+  orderTax: state.cartReducer.orderTax,
 })
 
-export default connect(null, mapDispatchToProps)(Purchase)
+const mapDispatchToProps = dispatch => ({
+  openModal: () => dispatch(openModal()),
+  calcOrderTotal: item => dispatch(calcOrderTotal(item)),
+  calcOrderTax: item => dispatch(calcOrderTax(item))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Purchase)

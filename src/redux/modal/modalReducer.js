@@ -1,4 +1,3 @@
-import ModalActionTyped from './modal.types'
 import ModalActionTypes from './modal.types'
 
 const INITIAL_STATE = {

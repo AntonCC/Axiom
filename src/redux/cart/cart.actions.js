@@ -19,3 +19,23 @@ export const decreaseItem = item => ({
   type: CartActionTypes.DECREASE_ITEM,
   payload: item
 })
+
+export const clearCart = () => ({
+  type: CartActionTypes.CLEAR_CART
+})
+
+export const addToTotal = items => ({
+  type: CartActionTypes.ADD_TO_TOTAL,
+  payload: items
+})
+
+export const calcOrderTotal = item => ({
+  type: CartActionTypes.CALC_ORDER_TOTAL,
+  payload: item
+})
+
+export const calcOrderTax = item => ({
+  type: CartActionTypes.CALC_TAX,
+  payload: item
+})
+

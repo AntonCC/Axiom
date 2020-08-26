@@ -3,6 +3,7 @@ import './product-banner.styles.scss'
 import { ReactComponent as Facebook } from '../../imgs/facebook.svg'
 import { ReactComponent as Twitter } from '../../imgs/twitter.svg'
 import { ReactComponent as Instagram } from '../../imgs/instagram.svg'
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addItem } from '../../redux/cart/cart.actions'
 import { useToasts } from 'react-toast-notifications'
@@ -39,7 +40,10 @@ const ProductBanner = (props) => {
           <p>{ description }</p>
           <h5 className="active-price">{ `$${activePrice}` }</h5>
           <h5 className="line-through">{ listPrice }</h5>
-          <div className="purchase-btn" onClick={handleClick}>Purchase</div>
+          <div className="btn-group">
+            <div className="purchase-btn" onClick={handleClick}>Purchase</div>
+            <NavLink className="cart-btn" exact to="/checkout">Go To Cart</NavLink>
+          </div>
         </div>
         <div className="social-icons">
           <Facebook className="facebook-icon" />

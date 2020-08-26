@@ -1,16 +1,3 @@
-// export const addItemToCart = (cartItems, cartItemToAdd) => {
-//   const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id)
-
-//   if(existingCartItem) {
-//     return cartItems.map(cartItem => 
-//       cartItem.id === cartItemToAdd.id
-//         ? {...cartItem, quantity: cartItem.quantity + 1}
-//         : cartItem  
-//       )
-//   }
-//   return [...cartItems, {...cartItemToAdd, quantity: 1}]
-// }
-
 export const addItemToCart = (cartItems, cartItemToAdd) => {
   const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id)
 
@@ -58,4 +45,30 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
     return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
   }
   return cartItems
+}
+
+export const addToTotal = (cartItems) => {
+  let cartTotal = 0
+  cartItems.forEach(cartItem => {
+    cartTotal +=(cartItem.activePrice * cartItem.quantity)
+  })
+  
+  return cartTotal
+}
+// helper
+const roundTwo = (num) => {
+  let multiplier = Math.pow(10, 2)
+  return (Math.round(num * multiplier) / multiplier)
+}
+
+export const orderTotal = (cartTotal) => {
+  const tax = roundTwo(cartTotal * .0875)
+
+  return roundTwo(cartTotal + tax + 9.99)
+}
+
+export const orderTax = (cartTotal) => {
+  const tax = roundTwo(cartTotal * .0875)
+
+  return tax
 }

@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import './payment-modal.styles.scss'
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js'
 import axios from 'axios'
-// import { ReactComponent as Exit } from '../../imgs/times-circle-regular.svg'
+import { connect } from 'react-redux'
+import { closeModal } from '../../redux/modal/modal.actions'
+import { clearCart } from '../../redux/cart/cart.actions'
+import { ReactComponent as Exit } from '../../imgs/times-circle-regular.svg'
 
 const api = axios.create({
   baseURL: 'http://localhost:5000/api/secret'
@@ -17,7 +20,7 @@ const cardOptions = {
   }
 }
 
-const PaymentModal = () => {
+const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
   const stripe = useStripe()
   const elements = useElements()
   const [formDetails, setFormDetails] = useState({
@@ -42,14 +45,17 @@ const PaymentModal = () => {
           name: formDetails.name,
           address: formDetails.address,
           city: formDetails.city,
-          state: formDetails.state,
+          // state: formDetails.state,
         }
       }
     }).then(result => {
       if(result.error) {
         console.log(result.error.message)
       } else if(result.paymentIntent.status === 'succeeded') {
-        console.log("Good job dude! Your a master dev!")
+        console.log("Payment successful.")
+        closeModal()
+        alert("Payment Successfull.")
+        clearCart()
       }
     })
   }
@@ -59,11 +65,25 @@ const PaymentModal = () => {
     setFormDetails({[name]: value})
   }
 
+  const handleClick = () => {
+    closeModal()
+  }
+
   return (
     <div className="wrapper">
       <div className="payment-modal">
         <div className="top">
           <h2>Axiom Headphones</h2>
+          <h4>Order total: ${orderTotal}</h4>
+          <div className="test-card-group">
+            <h5><span>Test Card: </span>4242 4242 4242 4242</h5>
+            <h5><span>Expiration: </span>12/20</h5>
+            <h5><span>CVC: </span>222</h5>
+            <h5><span>Zip Code: </span>11238</h5>
+          </div>
+          <div className="exit-container" onClick={handleClick}>
+            <Exit />
+          </div>
         </div>
         <div className="bottom">
           <form onSubmit={handleSubmit}>
@@ -84,4 +104,14 @@ const PaymentModal = () => {
     </div>
   )
 }
-export default PaymentModal
+
+const mapStateToProps = state => ({
+  orderTotal: state.cartReducer.orderTotal
+})
+
+const mapDispatchToProps = dispatch => ({
+  closeModal: () => dispatch(closeModal()),
+  clearCart: () => dispatch(clearCart())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaymentModal)

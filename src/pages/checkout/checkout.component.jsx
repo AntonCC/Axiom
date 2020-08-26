@@ -1,50 +1,50 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import './checkout.styles.scss'
 import { connect } from 'react-redux'
 import CartItem from '../../components/cart-item/cart-item.component'
 import Purchase from '../../components/purchase/purchase.component'
-import PaymentModal from '../../components/payment-modal/payment-modal.component'
+import { addToTotal } from '../../redux/cart/cart.actions'
 
-
-const Checkout = ({ cartItems }) => {
-  const [cartAmount, setCartAmount] = useState(0)
-
+const Checkout = ({ cartItems, cartTotal, addToTotal }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
+  
   useEffect(() => {
-    let cartTotal = 0
-    cartItems.forEach(cartItem => {
-      cartTotal+=(cartItem.activePrice * cartItem.quantity)
-    })
-    setCartAmount(cartTotal)
-  } ,[cartItems, cartAmount])
+    addToTotal(cartItems)
+  } ,[cartItems])
 
 
   return (
     <div className="checkout">
       <h2 className="checkout-title">Checkout</h2>
-      <div className="cart-wrap">
-        { 
-          cartItems.length === 0 
-            ? <h4 className="empty-cart">Your Cart Is Empty. Press Buy Now and add the items you would like to purchase.</h4>
-            :  cartItems.map(cartItem => (
-                <CartItem item={cartItem}/>
-              ))
-        }
-        {
-          cartAmount !== 0
-            ? <Purchase className="purchase-group" cartAmount={cartAmount} />
-            : ''
-        }
-      </div>
+        <div className="cart-wrap">
+          { 
+            cartItems.length === 0 
+              ? <h4 className="empty-cart">Your Cart Is Empty. Press Buy Now and add the items you would like to purchase.</h4>
+              :  cartItems.map(cartItem => (
+                <div className="animate-wrap">
+                  <CartItem item={cartItem}/>
+                </div>
+                ))
+          }
+          {
+            cartTotal !== 0
+              ? <Purchase className="purchase-group" />
+              : ''
+          }
+        </div>
     </div>
   )
 }
 const mapStateToProps = state => ({
-  cartItems: state.cartReducer.cartItems
+  cartItems: state.cartReducer.cartItems,
+  cartTotal: state.cartReducer.cartTotal
 })
 
-export default connect(mapStateToProps)(Checkout)
+const mapDispatchToProps = dispatch => ({
+  addToTotal: items => dispatch(addToTotal(items))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout)

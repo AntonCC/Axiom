@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -22,12 +22,17 @@ const App = ({ isModalOpen }) => {
   // For lightbox picture
   const [imgClicked, setImgClicked] = useState(null)
   const [lightbox, setLightbox] = useState(false)
-  // Mini side cart
+  
+  useEffect(() => {
+    if(isModalOpen || sidebar) {
+      openBackdrop()
+    } else if(!isModalOpen || !sidebar){
+      closeAll()
+    }
+  }, [isModalOpen, sidebar])
 
   const openSidebar = () => {
     setSidebar(true)
-    setBackdrop(true)
-    setAppBlur(true)
   }
   // Seperated out for use with lightbox 
   const openBackdrop = () => {
@@ -49,7 +54,7 @@ const App = ({ isModalOpen }) => {
     setLightbox(false)
     setAppBlur(false)
   }
-  // Background with blur
+
   let renderBackdrop
   if(backdrop) {
     renderBackdrop = <Backdrop handleClick={closeAll}/>
