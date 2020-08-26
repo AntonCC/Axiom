@@ -8,7 +8,7 @@ import { clearCart } from '../../redux/cart/cart.actions'
 import { ReactComponent as Exit } from '../../imgs/times-circle-regular.svg'
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api/secret'
+  baseURL: 'http://antonchet.com:5000/api/secret'
 })
 
 const cardOptions = {

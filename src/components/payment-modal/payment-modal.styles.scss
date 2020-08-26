@@ -20,15 +20,20 @@
       h2 {
         text-align: center;
         padding: 2rem 0 1rem 0;
+        color: #0b2e77;
+        text-decoration: underline;
       }
       h4 {
         padding: 0 0 1rem 0;
       }
+     .test-card-group {
+       margin-bottom: 1rem;
       h5 {       
         span {
           color: blue;
         }
       }
+     }
       .exit-container {
         height: 25px;
         width: 25px;
