@@ -24,9 +24,7 @@ const Checkout = ({ cartItems, cartTotal, addToTotal }) => {
             cartItems.length === 0 
               ? <h4 className="empty-cart">Your Cart Is Empty. Press Buy Now and add the items you would like to purchase.</h4>
               :  cartItems.map(cartItem => (
-                <div className="animate-wrap">
-                  <CartItem item={cartItem}/>
-                </div>
+                <CartItem item={cartItem}/>
                 ))
           }
           {
