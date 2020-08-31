@@ -8,7 +8,7 @@ import { clearCart } from '../../redux/cart/cart.actions'
 import { ReactComponent as Exit } from '../../imgs/times-circle-regular.svg'
 
 const api = axios.create({
-  baseURL: 'https://localhost:5000/api/secret'
+  baseURL: 'http://localhost:5000/api'
 })
 
 const cardOptions = {
@@ -33,31 +33,33 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await api.post('/')
-    const clientSecret = res.data.client_secret
+    const res = await api.get('/test')
+    console.log(res)
+    // const res = await api.post('/')
+    // const clientSecret = res.data.client_secret
 
-    const cardElement = elements.getElement(CardElement)
+    // const cardElement = elements.getElement(CardElement)
 
-    stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: cardElement,
-        billing_details: {
-          name: formDetails.name,
-          address: formDetails.address,
-          city: formDetails.city,
-          // state: formDetails.state,
-        }
-      }
-    }).then(result => {
-      if(result.error) {
-        console.log(result.error.message)
-      } else if(result.paymentIntent.status === 'succeeded') {
-        console.log("Payment successful.")
-        closeModal()
-        alert("Payment Successfull.")
-        clearCart()
-      }
-    })
+    // stripe.confirmCardPayment(clientSecret, {
+    //   payment_method: {
+    //     card: cardElement,
+    //     billing_details: {
+    //       name: formDetails.name,
+    //       address: formDetails.address,
+    //       city: formDetails.city,
+    //       // state: formDetails.state,
+    //     }
+    //   }
+    // }).then(result => {
+    //   if(result.error) {
+    //     console.log(result.error.message)
+    //   } else if(result.paymentIntent.status === 'succeeded') {
+    //     console.log("Payment successful.")
+    //     closeModal()
+    //     alert("Payment Successfull.")
+    //     clearCart()
+    //   }
+    // })
   }
 
   const handleChange = e => {
