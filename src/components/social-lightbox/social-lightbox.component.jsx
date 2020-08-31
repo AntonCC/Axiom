@@ -18,7 +18,7 @@ const SocialLightbox = (props) => {
 
   return (
     <div className="lightbox">
-      <h2>Axiom In The World</h2>
+      {/* <h2>Axiom In The World</h2> */}
       <div className="container">
         <img onClick={e => handleLightbox(e)} src={Lb1} alt="headphones"/>
         <img onClick={e => handleLightbox(e)} src={Lb2} alt="headphones"/>

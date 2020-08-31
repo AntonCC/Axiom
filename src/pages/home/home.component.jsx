@@ -5,6 +5,7 @@ import Landing from '../../components/landing/landing.component'
 import Hero from '../../components/hero/hero.component'
 import Banner from '../../components/banner/banner.component'
 import SocialLightbox from '../../components/social-lightbox/social-lightbox.component'
+import Title from '../../components/title/title.component'
 
 const bannerInfo = {
   title: "Get $50 Off On Axiom G1 Headphones", 
@@ -26,6 +27,7 @@ const Home = (props) => {
       <Landing />
       <Hero />
       <Banner {...bannerInfo}/>
+      <Title title="Axiom In The World"/>
       <SocialLightbox {...props} />
     </div>
   )

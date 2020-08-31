@@ -2,24 +2,6 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 5rem;
-  h2 {
-    display: inline-block;
-    position: relative;
-    align-self: center;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-    &::after {
-      content: '';
-      width: 100%;
-      height: 10px;
-      background: #55efc4;
-      position: absolute;
-      bottom: 5%;
-      right: 0px;
-      z-index: -1;
-    }
-  }
   .container {
     display: grid;
     grid-template-columns: repeat(3, minmax(250px, 1fr));
