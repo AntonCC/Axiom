@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './contact-info-form.styles.scss'
 
 const ContactInfoForm = () => {
+  const contactForm = useRef(null)
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    alert('Form Submitted.')
+    contactForm.current.reset()
+  }
+
   return (
     <div className="contact-info-form">
       <div className="container">
@@ -17,7 +25,7 @@ const ContactInfoForm = () => {
         </div>
         <div className="side-b">
           <h2>Send A Message</h2>
-          <form>
+          <form onSubmit={handleSubmit} ref={contactForm}>
             <div className="name-group group">
               <div className="first">
                 <label htmlFor="firstName">First Name</label>
@@ -36,7 +44,7 @@ const ContactInfoForm = () => {
               <label htmlFor="message">Message</label>
               <textarea name="message" cols="30" rows="10"></textarea>
             </div>
-            <div className="form-btn">Send Message</div>
+            <button className="form-btn" type="submit">Send Message</button>
           </form>
         </div>
       </div>
