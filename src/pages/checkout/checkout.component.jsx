@@ -8,10 +8,6 @@ import { addToTotal } from '../../redux/cart/cart.actions'
 const Checkout = ({ cartItems, cartTotal, addToTotal }) => {
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-  
-  useEffect(() => {
     addToTotal(cartItems)
   } ,[cartItems])
 

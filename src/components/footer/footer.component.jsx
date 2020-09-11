@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './footer.styles.scss'
 import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
+  const emailForm = useRef(null)
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    alert('Thanks for signing up.')
+    emailForm.current.reset()
+  }
+
   return (
     <footer>
       <div className="container">
@@ -12,7 +20,7 @@ const Footer = () => {
           </div>
           <div className="social">
             <h4>Connect with us at:</h4>
-            <form action="/">
+            <form onSubmit={handleSubmit} ref={emailForm}>
               <input type="email" name="email" placeholder="Email" required/>
               <button><i class="fas fa-arrow-right"></i></button>
             </form>
@@ -27,8 +35,8 @@ const Footer = () => {
           <h3>Company Info</h3>
           <ul>
             <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/">About</NavLink></li>
-            <li><NavLink to="/">Contact</NavLink></li>
+            <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/">Privacy Policy</NavLink></li>
             <li><NavLink to="/">Term Of Service</NavLink></li>
           </ul>

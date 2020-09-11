@@ -64,7 +64,15 @@ const roundTwo = (num) => {
 export const orderTotal = (cartTotal) => {
   const tax = roundTwo(cartTotal * .0875)
 
-  return roundTwo(cartTotal + tax + 9.99)
+  let total = roundTwo(cartTotal + tax + 9.99)
+  // if ending zero is missing
+  const centsStr = total.toString().split('.')[1]
+
+  if(centsStr.length === 1) {
+    return total.toString() + '0'
+  } else {
+    return total.toString()
+  }
 }
 
 export const orderTax = (cartTotal) => {

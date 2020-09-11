@@ -9,7 +9,7 @@ const Landing = () => {
       <div className="container">
         <div className="side-a">
           <h2>Headphones for <strong className="underline">all</strong> your music</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel tempore aliquid deleniti repellendus qui commodi?</p>
+          <p>Axioms headphones sound great not matter what music you play on them! From the deepest bass to the highest treble.</p>
           <div className="landing-cta">
             <RoundedButton btnPath="/about" btnText="Learn More" /> 
             <RoundedButton btnPath="/buy" btnText="View Models" inverse />        

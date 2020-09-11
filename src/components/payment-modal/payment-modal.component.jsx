@@ -3,6 +3,8 @@ import './payment-modal.styles.scss'
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { css } from '@emotion/core'
+import ClipLoader from 'react-spinners/ClipLoader'
 import { closeModal } from '../../redux/modal/modal.actions'
 import { clearCart } from '../../redux/cart/cart.actions'
 import { ReactComponent as Exit } from '../../imgs/times-circle-regular.svg'
@@ -12,18 +14,11 @@ const api = axios.create({
   headers: {'Access-Control-Allow-Origin': '*'}
 })
 
-const cardOptions = {
-  style: {
-    // backgroundColor: 'red',
-    base: {
-      // background: 'blue'
-    }
-  }
-}
 
 const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
   const stripe = useStripe()
   const elements = useElements()
+  const [isLoading, setLoading] = useState(false)
   const [formDetails, setFormDetails] = useState({
     name: '',
     email: '',
@@ -34,7 +29,11 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await api.post('/secret')
+    if(!stripe || !elements) {
+      return;
+    }
+    setLoading(true)
+    const res = await api.post('/secret', {params: { amount: orderTotal}})
     const clientSecret = res.data.client_secret
 
     const cardElement = elements.getElement(CardElement)
@@ -46,7 +45,6 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
           name: formDetails.name,
           address: formDetails.address,
           city: formDetails.city,
-          // state: formDetails.state,
         }
       }
     }).then(result => {
@@ -58,6 +56,7 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
         alert("Payment Successfull.")
         clearCart()
       }
+      setLoading(false)
     })
   }
 
@@ -96,9 +95,17 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
               <input type="text" name="state" placeholder="State" onChange={handleChange} required/>
             </div>
             <div className="element-wrapper">
-              <CardElement options={cardOptions}/>
+              <CardElement />
             </div>
-            <button className="pay-btn" type="submit">Pay Now</button>
+            <button className="pay-btn" type="submit" disabled={!stripe}>Pay Now</button>
+            <div className="loading-wrap">
+              <ClipLoader
+                loading={isLoading}
+                size={35}
+                color={'#555'}
+              />
+            </div>
+            
           </form>
         </div>
       </div>

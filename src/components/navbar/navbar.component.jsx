@@ -3,6 +3,7 @@ import './navbar.styles.scss'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ShoppingIcon from '../shopping-icon/shopping-icon.component'
+import RoundedButton from '../rounded-button/rounded-button.component'
 
 const Navbar = ({ handleSidebar }) => {
 
@@ -19,7 +20,7 @@ const Navbar = ({ handleSidebar }) => {
           <NavLink exact to="/checkout">
             <ShoppingIcon />
           </NavLink>
-          <NavLink className="header-cta" exact to="/buy">Buy Now</NavLink>
+          <RoundedButton btnPath='/buy' btnText='Buy Now' fWeight='700' fSize='.9rem' inverse />
         </div>
 
         <div className="hamburger" onClick={handleSidebar}>

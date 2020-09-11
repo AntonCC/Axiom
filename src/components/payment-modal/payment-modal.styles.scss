@@ -9,6 +9,7 @@
   .payment-modal {
     width: 400px;
     border: 1px solid #111;
+    position: relative;
     .top {
       background: #ededed 	;
       height: 30%;
@@ -77,6 +78,11 @@
         font-weight: 700;
         text-align: center;
         cursor: pointer;
+      }
+      .loading-wrap {
+        position: absolute;
+        bottom: 30px;
+        right: 150px;
       }
     }
   }

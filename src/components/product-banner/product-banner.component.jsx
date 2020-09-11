@@ -41,14 +41,14 @@ const ProductBanner = (props) => {
           <h5 className="active-price">{ `$${activePrice}` }</h5>
           <h5 className="line-through">{ listPrice }</h5>
           <div className="btn-group">
-            <div className="purchase-btn" onClick={handleClick}>Purchase</div>
-            <NavLink className="cart-btn" exact to="/checkout">Go To Cart</NavLink>
+            <div className="purchase-btn" onClick={handleClick}>Add To Cart</div>
+            <NavLink className="cart-btn" exact to="/checkout">View Cart</NavLink>
           </div>
         </div>
         <div className="social-icons">
           <Facebook className="facebook-icon" />
           <Twitter className="twitter-icon" />
-          <Instagram className="instagram-icon" />
+          <Instagram className="instagram-icon"  />
         </div>
         <div className="side-b">
           <img src={ productImg } alt="headphones"/>

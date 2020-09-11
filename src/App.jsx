@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
+import ScrollTop from './components/scroll-top/scroll-top.component'
 import Navbar from './components/navbar/navbar.component'
 import Sidebar from './components/sidebar/sidebar.component'
 import Backdrop from './components/backdrop/backdrop.component'
@@ -73,19 +74,9 @@ const App = ({ isModalOpen }) => {
     {path: '/checkout', name: 'Checkout', component: <Checkout openBackdrop={openBackdrop}/>}
   ]
 
-  // function debounce(fn, ms) {
-  //   let timer;
-  //   return () => {
-  //     clearTimeout(timer)
-  //     timer = setTimeout(() => {
-  //       timer = null
-  //       fn.apply(this, arguments)
-  //     }, ms)
-  //   }
-  // }
-
   return (
     <div className="App">
+      <ScrollTop />
       <Sidebar open={sidebar} handleSidebar={closeAll}/>
       {renderBackdrop}
       {renderLightbox}

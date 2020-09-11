@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './home.styles.scss'
 import BannerImg from '../../imgs/whitebg-headphones.jpg'
 import Landing from '../../components/landing/landing.component'
@@ -18,10 +18,6 @@ const bannerInfo = {
 }
 
 const Home = (props) => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <div className="home">
       <Landing />
