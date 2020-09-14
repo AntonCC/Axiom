@@ -32,8 +32,8 @@ export const productInfo = [
     title: "Axiom T5",
     subTitle: "Value Choice",
     description: "Engineered for people who care about sound quality but don't want to break the bank.  Experience Axiom precision, at an entry level price.",
-    activePrice: 129.99,
-    listPrice: "$179.99",
+    activePrice: 99.99,
+    listPrice: "$149.99",
     productImg: Product3,
     quantity: 1
   }

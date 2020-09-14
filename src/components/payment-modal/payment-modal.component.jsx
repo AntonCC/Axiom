@@ -27,6 +27,11 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
     state: '',
   })
 
+  const options = {
+    height: '30px',
+    paddingLeft: '5px',
+  }
+
   const handleSubmit = async e => {
     e.preventDefault()
     if(!stripe || !elements) {
@@ -95,7 +100,7 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
               <input type="text" name="state" placeholder="State" onChange={handleChange} required/>
             </div>
             <div className="element-wrapper">
-              <CardElement />
+              <CardElement options={options} />
             </div>
             <button className="pay-btn" type="submit" disabled={!stripe}>Pay Now</button>
             <div className="loading-wrap">
