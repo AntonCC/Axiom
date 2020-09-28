@@ -63,6 +63,7 @@
           .amount {
             border-top: 1px solid #dedede;
             border-bottom: 1px solid #dedede;
+            user-select: none;
           }
           .plus {
             border: 1px solid #dedede;
@@ -79,6 +80,7 @@
       .bottom {
         display: flex;
         justify-content: space-between;
+        user-select: none;
         .remove-item {
           display: flex;
           margin-bottom: 1rem;
