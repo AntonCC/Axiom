@@ -55,6 +55,7 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
     }).then(result => {
       if(result.error) {
         console.log(result.error.message)
+        alert('Error processing the payment. Please review billing information and try again.')
       } else if(result.paymentIntent.status === 'succeeded') {
         console.log("Payment successful.")
         closeModal()
