@@ -91,9 +91,6 @@
             width: 15px;
             margin-right: .5rem;
           }
-          h5 {
-            // line-height: 1;
-          }
         }
       }
     }
@@ -102,6 +99,7 @@
 
 @media only screen and (max-width: 600px) {
   .cart-item {
+    padding: 1.5rem 1rem;
     .container {
       flex-direction: column;
       .side-a {
@@ -111,6 +109,9 @@
       }
       .side-b {
         padding: 0 1rem;
+        .top {
+          margin-bottom: .75rem;
+        }
       }
     }
   }

@@ -6,6 +6,18 @@
   .checkout-title {
     max-width: 1400px;
     margin: 2.5rem 0;
+    font-size: 1.75rem;
+    position: relative;
+    &::after {
+      content: '';
+      width: 105%;
+      height: 8px;
+      background: #55efc4;
+      position: absolute;
+      bottom: 10%;
+      right: -4px;
+      z-index: -1;
+    } 
   }
   .cart-wrap {
     max-width: 800px;

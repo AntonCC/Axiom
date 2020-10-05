@@ -97,7 +97,7 @@
 }
 
 // Media query 1025px
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 1035px) {
   .product-banner {
     .container {
       grid-template-areas: 
@@ -135,8 +135,6 @@
         grid-column: 1/2;
         order: 1;
         max-height: 400px;
-        img {
-        }
       }
     }
   }
@@ -168,6 +166,12 @@
             width: 200px;
             text-align: center;
           }
+        }
+      }
+      .social-icons {
+        svg {
+          height: 40px;
+          width: 40px;
         }
       }
     }
