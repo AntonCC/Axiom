@@ -6,14 +6,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
+  text-align: center;
   h2 {
     color: #fff;
     font-size: 3rem;
-    // font-weight: 400;
   }
 }
 
-// Media Query 865px
 @media only screen and (max-width: 865px) {
   .full-img-banner {
     h2 {
