@@ -6,6 +6,9 @@ import RoundedButton from '../rounded-button/rounded-button.component'
 const Sidebar = ({ open, handleSidebar }) => {
   return (
     <nav className={`sidebar ${open ? 'open' : ''}`}>
+      <div className="close" onClick={handleSidebar}>
+        X
+      </div>
       <ul>
         <li><NavLink exact to="/" onClick={handleSidebar}>Home</NavLink></li>
         <li><NavLink exact to="/about" onClick={handleSidebar}>About Us</NavLink></li>

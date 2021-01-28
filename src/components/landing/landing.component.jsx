@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './landing.styles.scss'
 import Headphone from '../../imgs/headphones.png'
 import RoundedButton from '../rounded-button/rounded-button.component'
 
 const Landing = () => {
+  const [innerHeight, setInnerHeight] = useState()
+
+  useEffect(() => {
+    // For initial load
+    setInnerHeight(window.innerHeight)
+
+    window.addEventListener('resize', handleHeightChange)
+
+    return () => {
+      window.removeEventListener('resize', handleHeightChange)
+    }
+  }, [])
+
+  const handleHeightChange = () => {
+    setInnerHeight(window.innerHeight)
+  }
+
   return (
-    <div className="landing">
+    <div className="landing" style={{ height: `calc(${innerHeight}px - 71px)` }}>
       <div className="container">
         <div className="side-a">
           <h2>Headphones for <strong className="underline">all</strong> your music</h2>

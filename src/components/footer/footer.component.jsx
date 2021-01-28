@@ -22,13 +22,13 @@ const Footer = () => {
             <h4>Connect with us at:</h4>
             <form onSubmit={handleSubmit} ref={emailForm}>
               <input type="email" name="email" placeholder="Email" required/>
-              <button><i class="fas fa-arrow-right"></i></button>
+              <button><i className="fas fa-arrow-right"></i></button>
             </form>
           </div>
           <div className="icons">
-            <i class="fab fa-facebook-square fa-2x"></i>
-            <i class="fab fa-twitter-square fa-2x"></i>
-            <i class="fab fa-instagram-square fa-2x"></i>
+            <i className="fab fa-facebook-square fa-2x"></i>
+            <i className="fab fa-twitter-square fa-2x"></i>
+            <i className="fab fa-instagram-square fa-2x"></i>
           </div>
         </div>
         <div className="column">

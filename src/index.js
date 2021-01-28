@@ -10,6 +10,7 @@ import { store, persistor } from './redux/store'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 
+// Publishable key
 const stripe = loadStripe('pk_test_Z7jJCliZV8OSj3W5iv3dI2yg0074ZWtPBk')
 
 ReactDOM.render(
