@@ -83,6 +83,10 @@
         text-align: center;
         cursor: pointer;
         user-select: none;
+        &.inactive {
+          background: grey;
+          outline: grey;
+        }
       }
       .loading-wrap {
         position: absolute;

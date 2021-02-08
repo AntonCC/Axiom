@@ -83,7 +83,7 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
           <h4>Order total: ${orderTotal}</h4>
           <div className="test-card-group">
             <h5><span>Test Card: </span>4242 4242 4242 4242</h5>
-            <h5><span>Expiration: </span>12/20</h5>
+            <h5><span>Expiration: </span>12/21</h5>
             <h5><span>CVC: </span>222</h5>
             <h5><span>Zip Code: </span>11238</h5>
           </div>
@@ -103,7 +103,7 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
             <div className="element-wrapper">
               <CardElement options={options} />
             </div>
-            <button className="pay-btn" type="submit" disabled={!stripe}>Pay Now</button>
+            <button className={`pay-btn ${isLoading ? 'inactive' : ''}`} type="submit" disabled={!stripe}>Pay Now</button>
             <div className="loading-wrap">
               <ClipLoader
                 loading={isLoading}

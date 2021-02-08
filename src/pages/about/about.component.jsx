@@ -1,5 +1,6 @@
 import React from 'react'
 import './about.styles.scss'
+import { motion } from 'framer-motion'
 import WomanBlur from '../../imgs/woman-blur.jpg'
 import Record from '../../imgs/record.jpg'
 import FullImgBanner from '../../components/full-img-banner/full-img-banner.component'
@@ -13,7 +14,11 @@ const cardInfo = {title: "What's Important", img: Record, body: "When it comes d
 
 const About = () => {
   return (
-    <div className="about">
+    <motion.div className="about"
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+    >
       <FullImgBanner />
       <Title title="About" />
       <Banner {...bannerInfo}/>
@@ -21,7 +26,7 @@ const About = () => {
       <div className="full-size">
         <AboutCard {...cardInfo} />
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default About

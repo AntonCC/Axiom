@@ -1,5 +1,6 @@
 import React from 'react'
 import './home.styles.scss'
+import { motion } from 'framer-motion'
 import BannerImg from '../../imgs/whitebg-headphones.jpg'
 import Landing from '../../components/landing/landing.component'
 import Hero from '../../components/hero/hero.component'
@@ -19,13 +20,17 @@ const bannerInfo = {
 
 const Home = (props) => {
   return (
-    <div className="home">
+    <motion.div className="home"
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+    >
       <Landing />
       <Hero />
       <Banner {...bannerInfo}/>
       <Title title="Axiom In The World"/>
       <SocialLightbox {...props} />
-    </div>
+    </motion.div>
   )
 }
 export default Home

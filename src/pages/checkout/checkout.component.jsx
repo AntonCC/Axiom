@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './checkout.styles.scss'
 import { connect } from 'react-redux'
+import { motion } from 'framer-motion'
 import CartItem from '../../components/cart-item/cart-item.component'
 import Purchase from '../../components/purchase/purchase.component'
 import { addToTotal } from '../../redux/cart/cart.actions'
@@ -13,7 +14,11 @@ const Checkout = ({ cartItems, cartTotal, addToTotal }) => {
 
 
   return (
-    <div className="checkout">
+    <motion.div className="checkout"
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+    >
       <h2 className="checkout-title">Checkout</h2>
         <div className="cart-wrap">
           { 
@@ -29,7 +34,7 @@ const Checkout = ({ cartItems, cartTotal, addToTotal }) => {
               : ''
           }
         </div>
-    </div>
+    </motion.div>
   )
 }
 const mapStateToProps = state => ({
