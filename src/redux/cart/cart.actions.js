@@ -29,6 +29,11 @@ export const addToTotal = items => ({
   payload: items
 })
 
+export const calcItemTotal = item => ({
+  type: CartActionTypes.CALC_ITEM_TOTAL,
+  payload: item
+})
+
 export const calcOrderTotal = item => ({
   type: CartActionTypes.CALC_ORDER_TOTAL,
   payload: item

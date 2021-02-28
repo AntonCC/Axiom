@@ -61,6 +61,18 @@ const roundTwo = (num) => {
   return (Math.round(num * multiplier) / multiplier)
 }
 
+export const itemTotal = (cartTotal) => {
+  let total = roundTwo(cartTotal)
+
+  const centsStr = total.toString().split('.')[1]
+
+  if(centsStr.length === 1) {
+    return total.toString() + '0'
+  } else {
+    return total.toString()
+  }
+}
+
 export const orderTotal = (cartTotal) => {
   const tax = roundTwo(cartTotal * .0875)
 

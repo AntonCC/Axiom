@@ -38,6 +38,7 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
       return;
     }
     setLoading(true)
+    console.log('Order total from handleSubmit: ', orderTotal)
     const res = await api.post('/secret', {params: { amount: orderTotal}})
     const clientSecret = res.data.client_secret
 
@@ -111,7 +112,6 @@ const PaymentModal = ({ orderTotal, closeModal, clearCart }) => {
                 color={'#555'}
               />
             </div>
-            
           </form>
         </div>
       </div>

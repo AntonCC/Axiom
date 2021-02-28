@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './purchase.styles.scss'
 import { connect } from 'react-redux'
 import { openModal } from '../../redux/modal/modal.actions'
-import { calcOrderTotal, calcOrderTax } from '../../redux/cart/cart.actions'
+import { calcItemTotal, calcOrderTotal, calcOrderTax } from '../../redux/cart/cart.actions'
 
-const Purchase = ({ cartTotal, orderTotal, orderTax, calcOrderTotal, calcOrderTax, openModal }) => {
+const Purchase = ({ cartTotal, itemTotal, orderTotal, orderTax, calcItemTotal, calcOrderTotal, calcOrderTax, openModal }) => {
+  const [formattedTotal, setFormattedTotal] = useState()
 
   useEffect(() => {
+    console.log('Item total: ', itemTotal)
+    calcItemTotal(cartTotal)
     calcOrderTotal(cartTotal)
     calcOrderTax(cartTotal)
   }, [cartTotal])
@@ -17,7 +20,7 @@ const Purchase = ({ cartTotal, orderTotal, orderTax, calcOrderTotal, calcOrderTa
         <h4>The total amount of</h4>
         <span>
           <p>Item Total:</p>
-          <p>${ cartTotal }</p>
+          <p>${ itemTotal }</p>
         </span>
         <span>
           <p>Shipping:</p>
@@ -39,12 +42,14 @@ const Purchase = ({ cartTotal, orderTotal, orderTax, calcOrderTotal, calcOrderTa
 
 const mapStateToProps = state => ({
   cartTotal: state.cartReducer.cartTotal,
+  itemTotal: state.cartReducer.itemTotal,
   orderTotal: state.cartReducer.orderTotal,
   orderTax: state.cartReducer.orderTax,
 })
 
 const mapDispatchToProps = dispatch => ({
   openModal: () => dispatch(openModal()),
+  calcItemTotal: item => dispatch(calcItemTotal(item)),
   calcOrderTotal: item => dispatch(calcOrderTotal(item)),
   calcOrderTax: item => dispatch(calcOrderTax(item))
 })
